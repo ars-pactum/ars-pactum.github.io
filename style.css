@@ -3,3 +3,38 @@
   padding: 0;
   box-sizing: border-box;
 }
+a {text-decoration: none;}
+nav ul li{
+  display: inline-block;
+}
+/*FONT*/
+nav{font-family: arial;}
+nav{text-transform: uppercase;}
+nav{font-size: .7em;}
+#header-sec span{font-size: .7em;}
+/*COLOR———V*/
+  nav {
+    background: #fff;
+    color: #000;
+  }
+  nav ul li a{color: #000;}
+  nav ul li a:hover{}
+  #header-sec{
+    background: rgba(0, 0, 0, 0.5);
+  }
+  main{
+    background: #FEFBF7;
+    color: #444;
+  }
+/*COLOR———^*/
+/*PADDING, MARGIN, ALIGNMENT———V*/
+nav{ padding: 2em 4em; text-align: center;}
+nav ul li a{ padding: 1em;}
+#header-sec{margin: 2em 3em; padding: 1em;}
+main{margin: auto; padding: 1em 4em;}
+/*PADDING———^*/
+/*WIDTH*/
+/*#header-sec{width: 80%;}*/
+/*FLEX*/
+nav ul{display: flex; justify-content: space-between;}
+nav ul li:first-of-type{margin-right: auto;}
