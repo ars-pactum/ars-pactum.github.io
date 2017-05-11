@@ -1,13 +1,30 @@
 function init(){
- document.getElementById('cast').innerHTML = pamela.last;
-}
-function student(last, first, type){
-  this.last  = last;
-  this.first = first;
-  this.type  = type;
-  console.log(this.last);
+ pullINFO(STUDENT);
 }
 
-var pamela = new student(roux, pamela, magician);
+function pullINFO(KEYWORD) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+            setSTUDENT(this);
+    }
+  };
+  xhttp.open("GET", "catalog.xml", true);
+  xhttp.send();
+}
+
+function setSTUDENT(xml) {
+  var xmlSKILL;
+  var xmlDOC = xml.responseXML;
+  var x = xmlDOC.getElementsByTagName("student");
+  for (i = 0; i <x.length; i++) {
+      var n = x[i].getElementsByTagName("fname")[0].childNodes[0].nodeValue;
+      var l = x[i].getElementsByTagName("lname")[0].childNodes[0].nodeValue;
+      xmlSKILL += n + ",";
+      xmlSKILL += l + "<br>";
+
+  }
+    document.getElementById("cast").innerHTML = xmlSKILL;
+}
 
 window.onload = init;
