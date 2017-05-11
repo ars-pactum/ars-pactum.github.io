@@ -7,6 +7,7 @@ a {text-decoration: none;}
 nav ul li{
   display: inline-block;
 }
+.hello{display: none;}
 /*FONT*/
 nav{font-family: arial;}
 nav{text-transform: uppercase;}
