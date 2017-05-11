@@ -3,12 +3,28 @@ function init(){
     this.first = first;
     this.last = last;
     this.type = last;
+    this.all = last + ", " + first;
   }
-
-  var pamela = new createSTUDENT('Pamela','Roux','Magician');
+var studentBODY = [];
+  studentBODY[0] = new createSTUDENT('Pamela','Roux','Magician');
+  studentBODY[1] = new createSTUDENT('Lamont','DeRechier','Magician');
 
   var cast = document.getElementById('cast');
-  cast.textContent = pamela.last;
+
+function compare(x, y){
+  var a = x.first;
+  var b = y.first;
+  return ((a < b) ? -1 : ((a > b) ? 1 : 0));
+}
+//
+var sorted = studentBODY.sort(compare);
+cast.innerHTML = studentBODY.sort(compare);
+
+  // for (var i = 0; i < studentBODY.length; i++) {
+  //
+  //   cast.innerHTML += studentBODY[i].all + "<br>";
+  // }
+
 }
 
 // function pullINFO(KEYWORD) {
