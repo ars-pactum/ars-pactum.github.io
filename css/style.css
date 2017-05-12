@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Inknut+Antiqua|Roboto:300');
 *{
   margin: 0;
   padding: 0;
@@ -6,12 +7,59 @@
 a {text-decoration: none;}
 nav ul li{
   display: inline-block;
+}#cast_filter {margin-bottom: .75em;}
+#cast_filter span{
+  padding-right: 1em;
+  font-size: .75em;
 }
 .hello{display: none;}
+  #cast_thumbnail {display: flex; justify-content: left; flex-direction: column wrap;}
+  #cast_thumbnail a{margin-right: .5em;}
+  #info_pamela{display: block;}
+  .toprow img{
+    display: block;
+margin: auto;
+    margin-bottom: 1em;
+    left: 0;
+    }
+  .toprow{
+    margin: 1em 0;
+    display: block;
+    width: 100%;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    position: relative;
+  }
+  .tbl_info{
+    width: 50%; margin: auto;
+  background: transparent;border-collapse: collapse;
+
+
+  }
+  .tbl_info tr:nth-of-type(2n){
+    background: transparent;
+  }
+  .tbl_info tr td:first-of-type{    text-align: right; font-weight: bold; }
+  .tbl_info tr td{
+    padding: .5em;
+  }
+  .info_character p{
+  margin-bottom: 1em;}
+  .info_character{display: none; }
+  #cast_thumbnail a:hover img{
+    transform: scale(1.2,1.2);
+    -webkit-filter: grayscale(1) blur(1px);
+    filter: grayscale(1) blur(1px);
+    transition: all ease-in .2s ;
+
+  }
+  #cast_thumbnail a{overflow: hidden;}
 /*FONT*/
-nav{font-family: arial;}
+nav{font-family: 'Roboto', sans-serif;}
 nav{text-transform: uppercase;}
 nav{font-size: .7em;}
+h2{font-family: 'Inknut Antiqua', serif;}
+main{font-family: 'Roboto', sans-serif; font-weight: 300;}
 #header-sec span{font-size: .7em;}
 /*COLOR———V*/
   nav {
@@ -27,6 +75,7 @@ nav{font-size: .7em;}
     background: #FEFBF7;
     color: #444;
   }
+
 /*COLOR———^*/
 /*PADDING, MARGIN, ALIGNMENT———V*/
 nav{ padding: 2em 4em; text-align: center;}
