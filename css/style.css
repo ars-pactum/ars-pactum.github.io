@@ -16,13 +16,13 @@ nav ul li{
   #cast_thumbnail {display: flex; justify-content: left; flex-direction: column wrap;}
   #cast_thumbnail a{margin-right: .5em;}
   #info_pamela{display: block;}
-  .toprow img{
+.toprow img{
     display: block;
-margin: auto;
+    margin: auto;
     margin-bottom: 1em;
     left: 0;
     }
-  .toprow{
+.toprow{
     margin: 1em 0;
     display: block;
     width: 100%;
@@ -30,22 +30,22 @@ margin: auto;
     justify-content: space-between;
     position: relative;
   }
-  .tbl_info{
-    width: 50%; margin: auto;
+.tbl_info{
+    width: 100%; margin: auto;
   background: transparent;border-collapse: collapse;
 
 
   }
-  .tbl_info tr:nth-of-type(2n){
+.tbl_info tr:nth-of-type(2n){
     background: transparent;
   }
-  .tbl_info tr td:first-of-type{    text-align: right; font-weight: bold; }
-  .tbl_info tr td{
-    padding: .5em;
+.tbl_info tr td:first-of-type{    text-align: right; font-weight: bold; }
+.tbl_info tr td{
+    padding: .5em;width: 50%;
   }
-  .info_character p{
+.info_character p{
   margin-bottom: 1em;}
-  .info_character{display: none; }
+.info_character{display: none; }
   #cast_thumbnail a:hover img{
     transform: scale(1.2,1.2);
     -webkit-filter: grayscale(1) blur(1px);
@@ -54,6 +54,7 @@ margin: auto;
 
   }
   #cast_thumbnail a{overflow: hidden;}
+  #cast_information{height: 100%;}
 /*FONT*/
 nav{font-family: 'Roboto', sans-serif;}
 nav{text-transform: uppercase;}
@@ -65,9 +66,18 @@ main{font-family: 'Roboto', sans-serif; font-weight: 300;}
   nav {
     background: #fff;
     color: #000;
+    box-shadow: 0px 2px 5px #bbb;
+    position: absolute;
+    z-index: 3;
+    width: 100%;
   }
+
   nav ul li a{color: #000;}
   nav ul li a:hover{}
+  header{
+    padding: 10% 0;
+      background: #eee;
+    }
   #header-sec{
     background: rgba(0, 0, 0, 0.5);
   }
@@ -80,8 +90,8 @@ main{font-family: 'Roboto', sans-serif; font-weight: 300;}
 /*PADDING, MARGIN, ALIGNMENT———V*/
 nav{ padding: 2em 4em; text-align: center;}
 nav ul li a{ padding: 1em;}
-#header-sec{margin: 2em 3em; padding: 1em;}
-main{margin: auto; padding: 1em 4em;}
+#header-sec{margin: 2em 20%; padding: 1em;}
+main{margin: auto; padding: 1em 20%;}
 /*PADDING———^*/
 /*WIDTH*/
 /*#header-sec{width: 80%;}*/
