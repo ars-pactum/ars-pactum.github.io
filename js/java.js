@@ -48,7 +48,7 @@ function createSTUDENT(first,last,type, image, desc){
   this.image    = "<img src=\""+image+"\" >";
   this.id       = "thumb_"+first;
   this.info       = "info_"+first;
-  this.link     = " <a href=\"#\" id=\""+this.id+"\" onclick=myF(\""+this.info+"\")>"+this.image+"</a> ";
+  this.link     = " <button id=\""+this.id+"\" onclick=myF(\""+this.info+"\")>"+this.image+"</button> ";
 
 
 

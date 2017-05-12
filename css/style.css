@@ -46,14 +46,17 @@ nav ul li{
 .info_character p{
   margin-bottom: 1em;}
 .info_character{display: none; }
-  #cast_thumbnail a:hover img{
+  #cast_thumbnail button:hover img{
     transform: scale(1.2,1.2);
     -webkit-filter: grayscale(1) blur(1px);
     filter: grayscale(1) blur(1px);
     transition: all ease-in .2s ;
 
   }
-  #cast_thumbnail a{overflow: hidden;}
+  #cast_thumbnail button{overflow: hidden; padding: 0;
+border: none;
+background: none;}
+button:focus { outline: none; }
   #cast_information{height: 100%;}
 /*FONT*/
 nav{font-family: 'Roboto', sans-serif;}
