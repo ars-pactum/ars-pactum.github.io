@@ -3,12 +3,39 @@
 <head>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/java.js" type="text/javascript"> </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+  $(document).ready(function(){
+    // Add smooth scrolling to all links
+    $("a").on('click', function(event) {
+
+      // Make sure this.hash has a value before overriding default behavior
+      if (this.hash !== "") {
+        // Prevent default anchor click behavior
+        event.preventDefault();
+
+        // Store hash
+        var hash = this.hash;
+
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top-100
+        }, 500, function(){
+
+          // Add hash (#) to URL when done scrolling (default click behavior)
+          window.location.hash = hash;
+        });
+      } // End if
+    });
+  });
+</script>
 </head>
 <body>
   <nav>
     <ul>
       <li><a href="#">Ars Pactum</a></li>
-      <li><a href="#">About</a></li>
+      <li><a href="#about">About</a></li>
       <li><a href="#cast">Cast</a></li>
       <li><a href="#">Gallery</a></li>
       <li><a href="#">Contact</a></li>
@@ -22,13 +49,12 @@
     </section>
   </header>
   <main>
-    <div class="line-center"><h2>About</h2></div>
-    <a name="about"></a>
+    <div class="line-center"><h2 id="about">About</h2></div>
     <article class="article_info article_about">
       <ul id="link-1">
       </ul>
     </article>
-    <div class="line-center"><h2>Cast</h2></div><a name="cast"></a>
+    <div class="line-center"><h2 id="cast">Cast</h2></div><a name="cast"></a>
     <section id="cast_filter">
       <span id="all">All</span>
       <span id="Magician">Magician</span>
