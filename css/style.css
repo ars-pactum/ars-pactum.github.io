@@ -33,9 +33,10 @@ ul li{list-style-type: none;}
   }
 
 .tbl_info tr:nth-of-type(2) td:nth-of-type(1){
-  font-weight: bold;
+  font-weight: normal;
   text-align : center;
   font-size  : 1.2em;
+  text-transform: uppercase;
 }
 .tbl_info tr td:first-of-type{    text-align: right; font-weight: bold; }
 .tbl_info tr:nth-of-type(1) td{
@@ -54,7 +55,6 @@ ul li{list-style-type: none;}
     -webkit-filter: grayscale(1) blur(1px);
     filter        : grayscale(1) blur(1px);
     transition    : all ease-in .2s ;
-
   }
   #cast_thumbnail button{
     overflow  : hidden;
@@ -120,10 +120,11 @@ button:focus { outline: none; }
   .info_character{
     /*background:  url('../img/bg_sky.png') no-repeat center;*/
     background-size: cover;
-    background     : #a0e350;
+    background     : #e0b42f;
     position       : relative;
   }
   .info_text{    color: #222;  }
+  #cast{background: #fff;}
 footer ul li a{  color: #333; transition: all .1s ease-in;}
 footer ul li a:hover{  background: #333; color: #fff}
 /*COLOR———^*/
@@ -157,13 +158,15 @@ footer ul li a:hover{  background: #333; color: #fff}
   }
   main h2::before{  left: -20%;}
   main h2::after{  right: -20%;}
-  footer{ margin: auto; padding: 3em 20%;}
+  footer{ margin: auto; padding: 3em 4em;}
   footer ul li a{padding: .25em 1em; margin-left: -1em;}
   footer ul li {margin-bottom: .5em;}
   #cast_filter{ padding: 0 25%;}
   #cast_filter span{    padding: .25em 1em; margin: 0;}
   #cast_thumbnail{ padding: .25em 20% 1em 20%;}
   .info_character{
+    justify-content: space-between;
+    overflow: hidden;
 
   }
   .info_text{
@@ -175,8 +178,24 @@ footer ul li a:hover{  background: #333; color: #fff}
     margin : auto;
     padding: 0 25%;
   }
+  .quote{
+
+    background: #fff;
+    color: #333;
+    padding: .25em .5em;
+
+    text-shadow: 0px 1px 0px pink;
+    font-size: 1.2em;
+  }
 /*PADDING———^*/
 
+.highlight{
+  background: rgba(255,255,255,.25); padding: 0 .25em;
+  font-weight: bold;
+  color: #000;
+  transition: all .3s ease-in;
+}
+.info_text:hover .highlight{background: rgba(255,255,255,1); color: #e0b42f;}
 
 /*HOVER*/
   #cast_filter span{position: relative;}
@@ -185,29 +204,62 @@ nav ul{display: flex; justify-content: space-between;}
 nav ul li:first-of-type{margin-right: auto;}
 .article_about ul {
   display        : flex;
-  justify-content: center;
+  justify-content: space-around;
   flex-flow      : row wrap;
+  align-content: flex-start;
 }
 .article_about ul li{
   display      : inline-block;
   width        : 30%;
   margin-bottom: .5em;
 }
-.article_about ul li a{  color: #000; padding: .25em 1em;}
+.article_about ul li a{
+  color: #000;
+  padding: .25em 1em;
+  border-bottom: 1px solid #bbb;
+  display: block;
+  }
 .article_about ul li a:hover{  background: #000; color: #fff;}
 
-footer{
+#footer-links{
   display            : flex;
-  flex-flow          : column wrap;
+  flex-flow          : row wrap;
   -webkit-align-items: flex-start;
    align-items       : flex-start;
+   align-content: flex-start;
 }
-footer ul{display: inline-block; margin-right: 1em;}
-ul li a+span{
-  display    : block;
+#footer-links ul{
+  display            : inline-block;
+  margin-right       : 2em;
+  align-self: flex-start;
+  margin-bottom: 1em;
+font-size: .8em;
+
+}
+
+ul li a+p{
+  display    : inline-block;
   margin-top : .5em;
   font-size  : .7em;
   font-family: 'Quicksand', sans-serif;
   font-style : italic;
+  text-align: left;
 }
-.article_about ul li a+span{margin-left: 1em}
+#footer-links ul li:first-of-type{
+  border-bottom : 1px solid black;
+  padding-bottom: .5em;
+  margin-left   : 0em;
+  padding-left  : 1em;
+}
+#footer-links ul li:nth-of-type(n+2){
+  display: table-row;
+
+
+}
+#footer-links ul li a{
+  display: table-cell;
+}
+#footer-links ul li a+p{
+  margin-left: .5em; transform: translateY(-25%);
+}
+.article_about ul li a+p{margin-left: 1em;}

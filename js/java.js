@@ -4,16 +4,20 @@ function init(){
   document.getElementById('Magician').onclick = function(){generateCast("Magician");};
   document.getElementById('Human').onclick = function(){generateCast("Human");};
   document.getElementById('Entity').onclick = function(){generateCast("Entity");};
+  document.getElementById('NPC').onclick = function(){generateCast("NPC");};
 
   createINFORMATION("Pamela","Roux","4/21/1946","Magician","Light","Upper Sixth Form Student");
   createINFORMATION("Christoph","Payne","12/3/1954","Human","Earth","First Form Student");
+  createINFORMATION("Basil","Payne","12/3/1954","Magician, T4","Earth","English Literature Professor");
   createINFORMATION("Aelia","Alberhect","12/3/1954","Magician","Electricity","Undergradate Student");
 
-  document.getElementById('info_Aelia').style.display = "flex";
+  document.getElementById('info_Pamela').style.display = "flex";
   generateLINK('f-link-1','mainLINK');
   generateLINK('f-link-2','eventLINK');
   generateLINK('f-link-3','blockLINK');
   generateLINK('link-1','mainLINK');
+  generateLINK('link-1','eventLINK');
+  generateLINK('link-1','blockLINK');
 
 
 }
@@ -54,9 +58,24 @@ function createSTUDENT(first,last,type, image, desc){
   this.id       = "thumb_"+first;
   this.info       = "info_"+first;
   this.link     = " <button id=\""+this.id+"\" onclick=myF(\""+this.info+"\")>"+this.image+"</button> ";
+}
+function createNPC(first,last,type, image, desc){
+  this.first    = first;
+  this.last     = last;
+  this.type     = "NPC";
 
+  if (this.last === ""){
+    this.name   = first;
+  }else{
+    this.name   = last + ", " + first;
+  }
 
+  this.namespan = "<span class='hello'>" + this.name + "</span> ";
 
+  this.image    = "<img src=\""+image+"\" >";
+  this.id       = "thumb_"+first;
+  this.info       = "info_"+first;
+  this.link     = " <button id=\""+this.id+"\" onclick=myF(\""+this.info+"\")>"+this.image+"</button> ";
 }
 function createINFORMATION(first,last, birthday, type, magic, info){
   var name = first + " "+ last;
@@ -91,7 +110,7 @@ function generateCast(type){
     studentBODY[8] = new createSTUDENT('Rabbit','','E','img/thumb_rabbit.png','');
     studentBODY[9] = new createSTUDENT('Rabbit','','E','img/thumb_rabbit.png','');
     studentBODY[10] = new createSTUDENT('Rabbit','','E','img/thumb_rabbit.png','');
-    studentBODY[11] = new createSTUDENT('Rabbit','','E','img/thumb_rabbit.png','');
+    studentBODY[11] = new createNPC('Basil','Payne','NPC','img/thumb_christoph.png','');
 
     var cast = document.getElementById('cast_thumbnail');
 
@@ -113,7 +132,7 @@ function generateCast(type){
 }
 
 function createLINK(display,hyperlink,desc){
-  this.link = "<a href=\"" + hyperlink + "\">" + display + "</a>" + "<span>" + desc +  "</span>";
+  this.link = "<a href=\"" + hyperlink + "\">" + display + "</a>" + "<p>" + desc +  "</p>";
 }
 
 
@@ -127,7 +146,7 @@ function generateLINK(where,links){
     docLINK[1] = new createLINK('Handbook',  'https://docs.google.com/document/d/1RhU5Cx8verBEfpb7okc4unbG7-e3HiY4V1ZMZtK9I8o/edit?usp=sharing','Main Handbook');
     docLINK[2] = new createLINK('Chatroom',  'http://chat.deviantart.com/chat/arspactum','');
     docLINK[3] = new createLINK('Inventory',  'https://docs.google.com/spreadsheets/d/1i-_tX5PRas9vS0IER5GGl8BUPjevELigOzsc5GnZb8I/edit?usp=sharing','Spreadsheet to Inventory');
-    docLINK[4] = new createLINK('Labyrinth', 'https://docs.google.com/spreadsheets/d/1kF-j8obN4o5cwRNt8XWM0C-GVd7hSTfpV1uHwhR93xE/edit?usp=sharing','');
+    docLINK[4] = new createLINK('Labyrinth', 'https://docs.google.com/spreadsheets/d/1kF-j8obN4o5cwRNt8XWM0C-GVd7hSTfpV1uHwhR93xE/edit?usp=sharing','Extended Reading for Labyrinth');
   }else if( links == "eventLINK"){
     docLINK[0] = new createLINK('Event 001','#','Autumn Equinox');
     docLINK[1] = new createLINK('Event 002','#','Bonfire Night');
@@ -138,6 +157,7 @@ function generateLINK(where,links){
   }else if( links == "blockLINK"){
     docLINK[0] = new createLINK('Block 000','#','Scuttlespore');
     docLINK[1] = new createLINK('Block 001.1','#','Apples');
+    docLINK[2] = new createLINK('Block 001.2','#','Apples');
   }
   for(i = 0; i < docLINK.length; i++){
     list += "<li>"+docLINK[i].link+"</li>";
